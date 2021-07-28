@@ -20,13 +20,13 @@ class Student(Base):
 
 # Create table
 # Base.metadata.create_all(engine)
+if __name__ == '__main___':
+    student1 = Student(name="Jone Doe", age="12", grade="4.50", department="CSE")
+    student2 = Student(name="Jone One", age="12", grade="4.50")
+    student3 = Student(name="Jone Two", age="12", grade="4.50")
 
-student1 = Student(name="Jone Doe", age="12", grade="4.50", department="CSE")
-student2 = Student(name="Jone One", age="12", grade="4.50")
-student3 = Student(name="Jone Two", age="12", grade="4.50")
+    # Single Insert
+    session.add(student1)
+    session.add_all([student2, student3])
 
-# Single Insert
-session.add(student1)
-session.add_all([student2, student3])
-
-session.commit()
+    session.commit()
